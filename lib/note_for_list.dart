@@ -1,13 +1,13 @@
 class NoteForList {
-  String noteId;
+  String noteID;
   String notetitle;
-  DateTime creatDateTime;
+  DateTime createDateTime;
   DateTime lastEditDateTime;
 
   NoteForList({
-    this.noteId,
+    this.noteID,
     this.notetitle,
-    this.creatDateTime,
+    this.createDateTime,
     this.lastEditDateTime,
   });
 }

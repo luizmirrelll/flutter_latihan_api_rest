@@ -92,11 +92,12 @@ class _NoteListState extends State<NoteList> {
                   ),
                   child: ListTile(
                     title: Text(
-                      _apiRespone.data[index].notetitle,
+                      _apiRespone.data[index].noteTitle,
                       style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                     subtitle: Text(
-                        'last edition on ${formatDateTime(_apiRespone.data[index].lastEditDateTime)}'),
+                        'last edition on ${formatDateTime(_apiRespone.data[index].latestEditDateTime)??
+                        _apiRespone.data[index].createDateTime}'),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (_) => NotesNotif(

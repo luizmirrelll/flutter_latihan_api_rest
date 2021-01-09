@@ -15,18 +15,19 @@ class NoteService {
         final notes = <NoteForList>[];
         for (var item in jsonData) {
           final note = NoteForList(
-              noteID: item['noteID'],
-              notetitle: item['notetitle'],
-              createDateTime: DateTime.parse(item['createDateTime']),
-              lastEditDateTime: item['lastEditDateTime'] != null
-                  ? DateTime.parse(item['lastEditDateTime'])
-                  : null);
+            noteID: item['noteID'],
+            noteTitle: item['noteTitle'],
+            createDateTime: DateTime.parse(item['createDateTime']),
+            latestEditDateTime: item['latestEditDateTime'] != null
+                ? DateTime.parse(item['latestEditDateTime'])
+                : DateTime.now(),
+          );
           notes.add(note);
         }
         return ApiRespone<List<NoteForList>>(data: notes);
       }
-      return ApiRespone<List<NoteForList>>(
-          error: true, errorMassage: 'an error occured BGSD');
+        return ApiRespone<List<NoteForList>>(
+            error: true, errorMassage: 'error di sini');
     }).catchError((_) => ApiRespone<List<NoteForList>>(
         error: true, errorMassage: 'an error occured BGSD'));
   }

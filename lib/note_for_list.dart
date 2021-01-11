@@ -18,7 +18,7 @@ class NoteForList {
             createDateTime: DateTime.parse(item['createDateTime']),
             latestEditDateTime: item['latestEditDateTime'] != null
                 ? DateTime.parse(item['latestEditDateTime'])
-                : null,
+                : DateTime.now(),
           );
   }
 }
